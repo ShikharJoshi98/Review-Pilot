@@ -1,7 +1,19 @@
+import { Route, Routes } from "react-router-dom"
+import DashboardLayout from "./layouts/DashboardLayout"
+import Dashboard from "./pages/Dashboard"
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
+
 function App() {
   return (
     <>
-      <p className="text-red-500">Hello</p>
+      <Routes>
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<Signup />} />
+      </Routes>
     </>
   )
 }
