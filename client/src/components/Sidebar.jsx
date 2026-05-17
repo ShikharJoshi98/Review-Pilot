@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { LuChevronLeft, LuChevronRight, LuLogOut } from "react-icons/lu";
 import { sideNav } from "../constants/dashboard";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
     const [isSideNav, setSideNav] = useState(true);
+    const navigate = useNavigate();
     const location = useLocation();
 
     return (
         <aside
-            className={`${isSideNav ? 'w-54' : 'w-20'} transition-all duration-300 h-full hidden bg-white p-4 lg:block border-r border-gray-400`}
+            className={`${isSideNav ? 'w-44' : 'w-20'} top-0 left-0 sticky transition-all duration-300 min-h-screen hidden bg-white p-4 md:block border-r border-gray-400`}
         >
             <p
                 className={`text-md sm:text-2xl mb-1 font-semibold text-neutral-700
